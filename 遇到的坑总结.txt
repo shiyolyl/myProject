@@ -1,0 +1,69 @@
+1:前端离开焦点发起请求 6666端口提示不安全
+
+2:处理跨域中间件中没有next(),就卡住了  导致跨域不成功
+
+3:由于是跨域然后请求方式是post+ content-type是application/json，浏览器预检的时候自动加上头:content-type 报错
+ 解决：后台cors处理跨域设置允许特定的头
+       res.setHeader('Access-Control-Allow-Headers', 'content-type');
+
+4: application/json（post请求默认为此形式的数据）的数据格式不被服务器中的body-parser解析 导致后台不能通过req.body获取到请求体数据
+   解决：在前端请求参数中 设置头为键值对的形式 content-type': 'application/x-www-form-urlencoded，并设置转换数据的方式
+   $http.post(host+'/api/check/username',{
+        username:uname,
+      }, {
+            //设置头
+            headers: {
+                'content-type': 'application/x-www-form-urlencoded' //键值对的形式
+            },
+            //转换数据  将参数转换成序列化的形式 以便后台能通过req.body获取到请求体参数信息
+            transformRequest: function(data) {
+                    var tmp = '';
+                    for (var key in data) {
+                        tmp += key + '=' + data[key] + '&'
+                    }
+                    //去除&
+                    return tmp.substr(0, tmp.length - 1);
+            }
+        })
+      .then(function(res){
+
+      },function(err){
+        console.log(err);
+      })
+
+
+  // =表示 双向数据绑定,如果外部直接给pwd="data.pwd",当你们修改，相互影响
+// @表示 单向数据绑定,如果外部修改，影响内部，内部修改不影响外部
+
+ 
+5.注册页面： 连接数据库后 用户输入用户名 后台根据用户名对数据库进行查询 如果没有返回可以注册的标记
+             一直报错 db.collection is not a function
+             
+             因为下载Mongodb时如果没有指定版本默认下载的是3.0的版本，在node.js中的写法和2.0的版本不一样，所以将package.json中mongodb的版本号
+             改成2.3.33版本即可解决。
+             解决：
+             代码确定是没错的，连数据库成功，那么问题就出在查询操作上，但数据库查询的代码检查了也是没问题的。
+             最后怀疑是模块出了问题。版本问题。
+百度得知：这个错误是出在mongodb的库中，在nodejs里的写法和命令行中的写法不一样，
+          3.0的api已经更新和以前的版本不不一样，我们在npm中没指定版本号的安装就默认安装的是3.0版本。
+https://blog.csdn.net/qq_36370731/article/details/78963078
+
+6.根据users的id作为songs的uid属性来查询此用户对应的歌曲信息时，查询不到返回空数组。--》
+原因：数据库给songs集合插入数据的时候，将uid属性的值当做string去插入了，和users集合中的_id数据类型(ObjectId)不一致，
+所以查询时返回空数组，查询不到数据。
+
+7.请求歌词数据的时候，由于无法转换成json对象的格式，报错
+解决：在请求的options参数中：添加以下，表示默认不转换
+{
+        transformResponse:function(data){
+          return data;
+        }
+}
+
+8. angular默认$http在跨域的时候不携带cookie,需要设置
+    withCredentials: true //允许携带证书->cookie
+
+9. 服务器当有跨域携带证书的时候，不允许origin是*,必须是某一个域的写法
+
+10. 根据上述，同时设置服务器允许携带证书
+ res.setHeader('Access-Control-Allow-Credentials', 'true');

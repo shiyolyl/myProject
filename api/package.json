@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "art-template": "^4.12.2",
+    "body-parser": "^1.18.2",
+    "captchapng": "0.0.1",
+    "express": "^4.16.3",
+    "express-art-template": "^1.0.1",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
+    "mongodb": "^2.2.33",
+    "pnglib": "0.0.1"
+  }
+}
