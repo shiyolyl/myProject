@@ -13,6 +13,12 @@
 ├── api 
     ├── controllers
     ├── models
+    ├── node_modules
+    ├── views
+    ├── config.js
+    ├── package.json
+    ├── server.js
+    ├── web_router.js
 ├── web 
     ├── css
     ├── file
