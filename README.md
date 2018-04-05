@@ -36,7 +36,16 @@
     ├── index.html
 ```
 
-项目分为api目录和web目录
+项目启动：
+```
+cd api
+```
+```
+node server.js  //开启服务器
+```
+```
+前端浏览器访问http://localhost:9997/#!/login 进入登录页
+```
 * 下载安装
 * 全局命令行工具 `npm i -g webpack`
 * 默认支持commonjs模块定义
