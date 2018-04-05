@@ -10,16 +10,24 @@
 * web目录  前端代码目录
 * api目录  服务端代码目录
 ```
-├── README.md           
-├── 项目和api接口说明文档   
-├── webpack.config.js  		// webpack配置文件
-├── package.json       		// 项目配置文件
-├── app.vue              	// 项目中全局Vue
-├── main.js        	    	// Webpack 预编译入口
-├── index.html         		// 项目入口文件
-├── components          	// 各种Vue组件
-├── static              	// 静态资源文件夹
-├── node_modules          	// node资源包(相当于npm install)
+├── api 
+    ├── controllers
+    ├── models
+├── web 
+    ├── css
+    ├── file
+    ├── fonts
+    ├── img
+    ├── js
+        ├── config
+        ├── controllers
+        ├── directives
+        ├── models
+        ├── client.js
+        ├── router.js
+    ├── vender
+    ├── views
+    ├── index.html
 ```
 
 项目分为api目录和web目录
