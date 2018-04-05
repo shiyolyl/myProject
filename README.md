@@ -41,6 +41,9 @@
 cd api
 ```
 ```
+npm install     //下载依赖文件
+```
+```
 node server.js  //开启服务器
 ```
 ```
