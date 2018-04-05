@@ -1,6 +1,9 @@
 # myProject
 我的项目
-#### webpack基本操作
+####项目简介
+此项目为一个音乐项目，用MEAN的技术栈实现。前端采用angular框架和bootstrap,jquery等框架实现，后端采用node+express框架实现，数据库采用非关系型mongodb实现用户数据的存储。包含登录，注册，我的音乐等界面，以及对音乐的增删改查功能的实现，歌曲播放，歌词滚动显示的实现等。
+
+项目分为api目录和web目录
 * 下载安装
 * 全局命令行工具 `npm i -g webpack`
 * 默认支持commonjs模块定义
