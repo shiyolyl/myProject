@@ -49,3 +49,5 @@ node server.js  //开启服务器
 ```
 前端浏览器访问http://localhost:9997/#!/login 进入登录页
 ```
+### 项目效果图展示
+* 登录页
