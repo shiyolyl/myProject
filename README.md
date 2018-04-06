@@ -50,5 +50,8 @@ node server.js  //开启服务器
 前端浏览器访问http://localhost:9997/#!/login 进入登录页
 ```
 ### 项目效果图展示
-* 注册页
 ![注册页](https://github.com/shiyolyl/images/blob/master/img/register.png)
+![登录页](https://github.com/shiyolyl/images/blob/master/img/login.png)
+![列表页](https://github.com/shiyolyl/images/blob/master/img/list.png)
+![添加页](https://github.com/shiyolyl/images/blob/master/img/add.png)
+![编辑页](https://github.com/shiyolyl/images/blob/master/img/edit.png)
